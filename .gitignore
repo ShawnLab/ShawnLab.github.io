@@ -1,0 +1,8 @@
+.DS_Store
+.textlintrc
+Thumbs.db
+db.json
+*.log
+node_modules/
+docs/.vuepress/dist/
+.history/
