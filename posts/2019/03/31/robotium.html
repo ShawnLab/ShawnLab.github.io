@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Robot Framework 结合 Appium 环境搭建 | 醉翁之翼</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <meta name="description" content="有的路，你必须一个人走，这不是孤独，而是选择！">
+    <link rel="preload" href="/assets/css/0.styles.9f0e0dd9.css" as="style"><link rel="preload" href="/assets/js/app.634d442c.js" as="script"><link rel="preload" href="/assets/js/7.1d3164ec.js" as="script"><link rel="preload" href="/assets/js/22.4706d8a9.js" as="script"><link rel="prefetch" href="/assets/js/1.c5a48fea.js"><link rel="prefetch" href="/assets/js/10.8a3e303a.js"><link rel="prefetch" href="/assets/js/11.523b72b9.js"><link rel="prefetch" href="/assets/js/12.2de233bb.js"><link rel="prefetch" href="/assets/js/13.971d944f.js"><link rel="prefetch" href="/assets/js/14.f5114355.js"><link rel="prefetch" href="/assets/js/15.1da13e54.js"><link rel="prefetch" href="/assets/js/16.b8b0c36e.js"><link rel="prefetch" href="/assets/js/17.808a148b.js"><link rel="prefetch" href="/assets/js/18.e6665f55.js"><link rel="prefetch" href="/assets/js/19.3ea98471.js"><link rel="prefetch" href="/assets/js/20.df28ef85.js"><link rel="prefetch" href="/assets/js/21.d00d9e7b.js"><link rel="prefetch" href="/assets/js/23.68ab7020.js"><link rel="prefetch" href="/assets/js/24.47a775e9.js"><link rel="prefetch" href="/assets/js/25.9d3d7cb3.js"><link rel="prefetch" href="/assets/js/26.cc1a3178.js"><link rel="prefetch" href="/assets/js/27.dbdc503e.js"><link rel="prefetch" href="/assets/js/28.67a435e5.js"><link rel="prefetch" href="/assets/js/29.61df9bec.js"><link rel="prefetch" href="/assets/js/3.82789a6d.js"><link rel="prefetch" href="/assets/js/30.dd28c3bc.js"><link rel="prefetch" href="/assets/js/31.3460a119.js"><link rel="prefetch" href="/assets/js/32.0caecbca.js"><link rel="prefetch" href="/assets/js/33.4a9f0a9a.js"><link rel="prefetch" href="/assets/js/34.2237d027.js"><link rel="prefetch" href="/assets/js/35.1c974d0d.js"><link rel="prefetch" href="/assets/js/36.259ac2db.js"><link rel="prefetch" href="/assets/js/37.c50fdf42.js"><link rel="prefetch" href="/assets/js/4.875f5afe.js"><link rel="prefetch" href="/assets/js/5.6be0c568.js"><link rel="prefetch" href="/assets/js/6.97ff8652.js"><link rel="prefetch" href="/assets/js/8.ba14a9d9.js"><link rel="prefetch" href="/assets/js/9.6d0d7519.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9f0e0dd9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          醉翁之翼
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            文章
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Robot Framework 结合 Appium 环境搭建
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-03-31
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/03/31/windows-appium.html" class="post-link" data-v-4e23451f>
+      上一篇 : Windows 搭建 Appium 环境
+    </a> <a href="/posts/2019/03/31/aria2.html" class="post-link" data-v-4e23451f>
+      下一篇 : Aria2：轻量级多线程下载工具，跟迅雷说拜拜
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><blockquote><p>Robot Framework 是一款基于 Python 的功能自动化测试框架。它具备良好的可扩展性，支持关键字驱动，可以同时测试多种类型的客户端或者接口，本文所述环境基于 Python 3 搭建</p></blockquote> <h2 id="环境依赖"><a href="#环境依赖" class="header-anchor">#</a> 环境依赖</h2> <blockquote><p>依赖环境安装教程请根据自己的系统选择参考 <a href="/posts/2019/03/31/windows-appium.html">Windows 搭建 Appium 环境</a>和<a href="/posts/2019/03/31/macos-appium.html">macOS 搭建 Appium 环境</a>两篇文章</p></blockquote> <ul><li>Python 3</li> <li>Appium</li></ul> <h2 id="框架搭建"><a href="#框架搭建" class="header-anchor">#</a> 框架搭建</h2> <p>一个命令解决<code>pip install robotframework-appiumlibrary</code>，这个命令会自动安装下列依赖：</p> <div class="language- extra-class"><pre><code>robotframework-appiumlibrary==1.5.0.2
+  - Appium-Python-Client [required: &gt;=0.28, installed: 0.40]
+    - selenium [required: &gt;=3.14.1, installed: 3.141.0]
+      - urllib3 [required: Any, installed: 1.24.1]
+  - decorator [required: &gt;=3.3.2, installed: 4.4.0]
+  - docutils [required: &gt;=0.8.1, installed: 0.14]
+  - kitchen [required: &gt;=1.2.4, installed: 1.2.5]
+  - robotframework [required: &gt;=2.6.0, installed: 3.1.1]
+  - selenium [required: &gt;=2.47.1, installed: 3.141.0]
+    - urllib3 [required: Any, installed: 1.24.1]
+  - six [required: &gt;=1.10.0, installed: 1.12.0]
+</code></pre></div><h2 id="调试工具"><a href="#调试工具" class="header-anchor">#</a> 调试工具</h2> <p>Robot Editor：<a href="https://github.com/nokia/RED/releases" target="_blank" rel="noopener noreferrer">下载链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 因 RIDE 不怎么好用，所以采用 Nokia 的 RED ， Robot Framework 最初是 Nokia Networks 开发的，所以这算是官方 Editor 了。</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-03-31
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/03/31/windows-appium.html" class="post-link" data-v-4e23451f>
+      上一篇 : Windows 搭建 Appium 环境
+    </a> <a href="/posts/2019/03/31/aria2.html" class="post-link" data-v-4e23451f>
+      下一篇 : Aria2：轻量级多线程下载工具，跟迅雷说拜拜
+    </a></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/img/avatar.jpg" alt="醉翁之翼" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      醉翁之翼
+    </section> <section class="info-desc" data-v-9d847660>Happy Coding<br/>Happy Life</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="ShenZhen City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>ShenZhen City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          ShenZhen City, China
+        </span></span></section> <!----> <section data-v-9d847660><a href="mailto:mcomax@outlook.com" title="mcomax@outlook.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>mcomax@outlook.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          mcomax@outlook.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/ShawnLab" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: ShawnLab" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: ShawnLab</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a><a href="http://www.linkedin.com/in/mcomax" target="_blank" class="sns-link" data-v-9d847660><span title="LinkedIn: mcomax" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>LinkedIn: mcomax</title><use xlink:href="#icon-linkedin" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/03/31/robotium.html#环境依赖">环境依赖</a></li><li><a href="/posts/2019/03/31/robotium.html#框架搭建">框架搭建</a></li><li><a href="/posts/2019/03/31/robotium.html#调试工具">调试工具</a></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/ShawnLab" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: ShawnLab" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: ShawnLab</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a><a href="http://www.linkedin.com/in/mcomax" target="_blank" class="sns-link" data-v-1375e54c><span title="LinkedIn: mcomax" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>LinkedIn: mcomax</title><use xlink:href="#icon-linkedin" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <p class="footer-text" data-v-1375e54c><span data-v-1375e54c>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-1375e54c>
+      VuePress
+    </a> <span data-v-1375e54c> | </span> <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" data-v-1375e54c>
+        meteorlxy
+      </a></p> <!----></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.634d442c.js" defer></script><script src="/assets/js/7.1d3164ec.js" defer></script><script src="/assets/js/22.4706d8a9.js" defer></script>
+  </body>
+</html>

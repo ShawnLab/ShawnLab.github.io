@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Robot Framework 之启动安卓应用 | 醉翁之翼</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <meta name="description" content="有的路，你必须一个人走，这不是孤独，而是选择！">
+    <link rel="preload" href="/assets/css/0.styles.9f0e0dd9.css" as="style"><link rel="preload" href="/assets/js/app.634d442c.js" as="script"><link rel="preload" href="/assets/js/7.1d3164ec.js" as="script"><link rel="preload" href="/assets/js/24.47a775e9.js" as="script"><link rel="prefetch" href="/assets/js/1.c5a48fea.js"><link rel="prefetch" href="/assets/js/10.8a3e303a.js"><link rel="prefetch" href="/assets/js/11.523b72b9.js"><link rel="prefetch" href="/assets/js/12.2de233bb.js"><link rel="prefetch" href="/assets/js/13.971d944f.js"><link rel="prefetch" href="/assets/js/14.f5114355.js"><link rel="prefetch" href="/assets/js/15.1da13e54.js"><link rel="prefetch" href="/assets/js/16.b8b0c36e.js"><link rel="prefetch" href="/assets/js/17.808a148b.js"><link rel="prefetch" href="/assets/js/18.e6665f55.js"><link rel="prefetch" href="/assets/js/19.3ea98471.js"><link rel="prefetch" href="/assets/js/20.df28ef85.js"><link rel="prefetch" href="/assets/js/21.d00d9e7b.js"><link rel="prefetch" href="/assets/js/22.4706d8a9.js"><link rel="prefetch" href="/assets/js/23.68ab7020.js"><link rel="prefetch" href="/assets/js/25.9d3d7cb3.js"><link rel="prefetch" href="/assets/js/26.cc1a3178.js"><link rel="prefetch" href="/assets/js/27.dbdc503e.js"><link rel="prefetch" href="/assets/js/28.67a435e5.js"><link rel="prefetch" href="/assets/js/29.61df9bec.js"><link rel="prefetch" href="/assets/js/3.82789a6d.js"><link rel="prefetch" href="/assets/js/30.dd28c3bc.js"><link rel="prefetch" href="/assets/js/31.3460a119.js"><link rel="prefetch" href="/assets/js/32.0caecbca.js"><link rel="prefetch" href="/assets/js/33.4a9f0a9a.js"><link rel="prefetch" href="/assets/js/34.2237d027.js"><link rel="prefetch" href="/assets/js/35.1c974d0d.js"><link rel="prefetch" href="/assets/js/36.259ac2db.js"><link rel="prefetch" href="/assets/js/37.c50fdf42.js"><link rel="prefetch" href="/assets/js/4.875f5afe.js"><link rel="prefetch" href="/assets/js/5.6be0c568.js"><link rel="prefetch" href="/assets/js/6.97ff8652.js"><link rel="prefetch" href="/assets/js/8.ba14a9d9.js"><link rel="prefetch" href="/assets/js/9.6d0d7519.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9f0e0dd9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          醉翁之翼
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            文章
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Robot Framework 之启动安卓应用
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-05-01
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/03/31/aria2.html" class="post-link" data-v-4e23451f>
+      上一篇 : Aria2：轻量级多线程下载工具，跟迅雷说拜拜
+    </a> <a href="/posts/2019/05/02/robotium-evaluate.html" class="post-link" data-v-4e23451f>
+      下一篇 : Robot Framework 之万能的 Evaluate
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h2 id="代码示例"><a href="#代码示例" class="header-anchor">#</a> 代码示例</h2> <p>如下代码以打开微信为例：</p> <p>1、首先在 Settings 下引入 AppiumLibrary 库</p> <p>2、然后在 Test Cases 下新建用例名为“打开微信”的测试用例</p> <p>3、使用 AppiumLibrary 库中 Open Application 关键字打开微信</p> <div class="language-robot extra-class"><pre class="language-robot"><code><span class="token settings section"><span class="token section-header keyword">*** Settings ***</span>
+<span class="token property">Library</span>     AppiumLibrary
+</span>
+<span class="token test-cases section"><span class="token section-header keyword">*** Test Cases ***</span>
+<span class="token test-name function">打开微信</span>
+    <span class="token property">Open Application</span>    http://localhost:4723/wd/hub    platformName=Android    platformVersion=6.0.1
+    ...    deviceName=192.168.31.225:5555    appPackage=com.tencent.mm    appActivity=.ui.LauncherUI
+    ...    noReset=True    unicodeKeyboard=True    resetKeyboard=True    automationName=UiAutomator2
+</span></code></pre></div><h2 id="代码详解"><a href="#代码详解" class="header-anchor">#</a> 代码详解</h2> <p>Open Application 参数：</p> <p><code>http://localhost:4723/wd/hub</code>：为 Appium 服务器端通信接口，端口默认为 4723</p> <p><code>platformName</code>：为平台名称</p> <p><code>platformVersion</code>：为平台版本</p> <p><code>deviceName</code>：为设备名称，通过命令 <code>adb devices</code> 获取, device 前面的字段就是设备名称，示例用的 IP 连接，所以设备名称也为 IP，通过 USB 连接的设备名称为英文字母组合。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>adb devices
+List of devices attached
+<span class="token number">192.168</span>.31.225:5555   device
+</code></pre></div><p><code>appPackage</code>：为应用包名，<code>appActivity</code>：为可启动的活动名称，可通过命令 <code>adb shell dumpsys activity activities | findstr mFocusedActivity</code> 获取，以微信为例，<code>/</code> 前面时包名，后面为活动名称。</p> <blockquote><p>Linux 或 macOS 可把 findstr 换成 grep</p></blockquote> <div class="language-sh extra-class"><pre class="language-sh"><code>adb shell dumpsys activity activities <span class="token operator">|</span> findstr mFocusedActivity
+  mFocusedActivity: ActivityRecord<span class="token punctuation">{</span>eb4f68a u0 com.tencent.mm/.ui.LauncherUI, isShadow:false t200<span class="token punctuation">}</span>
+</code></pre></div><p><code>noReset</code>：是否重置应用，需保留应用数据时置为 True</p> <p><code>unicodeKeyboard</code>：需输入输入中文时置为 True</p> <p><code>resetKeyboard</code>：是否重置键盘</p> <p><code>automationName</code>：Appium 1.14 后默认使用 UiAutomator2， 1.13 前默认使用 UiAutomator1</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-05-01
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/03/31/aria2.html" class="post-link" data-v-4e23451f>
+      上一篇 : Aria2：轻量级多线程下载工具，跟迅雷说拜拜
+    </a> <a href="/posts/2019/05/02/robotium-evaluate.html" class="post-link" data-v-4e23451f>
+      下一篇 : Robot Framework 之万能的 Evaluate
+    </a></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/img/avatar.jpg" alt="醉翁之翼" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      醉翁之翼
+    </section> <section class="info-desc" data-v-9d847660>Happy Coding<br/>Happy Life</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="ShenZhen City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>ShenZhen City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          ShenZhen City, China
+        </span></span></section> <!----> <section data-v-9d847660><a href="mailto:mcomax@outlook.com" title="mcomax@outlook.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>mcomax@outlook.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          mcomax@outlook.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/ShawnLab" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: ShawnLab" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: ShawnLab</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a><a href="http://www.linkedin.com/in/mcomax" target="_blank" class="sns-link" data-v-9d847660><span title="LinkedIn: mcomax" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>LinkedIn: mcomax</title><use xlink:href="#icon-linkedin" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/05/01/robotium-android.html#代码示例">代码示例</a></li><li><a href="/posts/2019/05/01/robotium-android.html#代码详解">代码详解</a></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/ShawnLab" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: ShawnLab" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: ShawnLab</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a><a href="http://www.linkedin.com/in/mcomax" target="_blank" class="sns-link" data-v-1375e54c><span title="LinkedIn: mcomax" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>LinkedIn: mcomax</title><use xlink:href="#icon-linkedin" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <p class="footer-text" data-v-1375e54c><span data-v-1375e54c>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-1375e54c>
+      VuePress
+    </a> <span data-v-1375e54c> | </span> <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" data-v-1375e54c>
+        meteorlxy
+      </a></p> <!----></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.634d442c.js" defer></script><script src="/assets/js/7.1d3164ec.js" defer></script><script src="/assets/js/24.47a775e9.js" defer></script>
+  </body>
+</html>
